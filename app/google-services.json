@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622475582255",
+    "project_id": "my-first-app-database-17e08",
+    "storage_bucket": "my-first-app-database-17e08.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622475582255:android:867d001a572b850a885fda",
+        "android_client_info": {
+          "package_name": "com.codingempire.firebase_setup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTtn1ZoZzpUonc25x9kMPra0fpxBsO24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622475582255:android:f048b4c94b089417885fda",
+        "android_client_info": {
+          "package_name": "com.nayab.myfirstapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTtn1ZoZzpUonc25x9kMPra0fpxBsO24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
