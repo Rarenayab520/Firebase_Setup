@@ -20,6 +20,10 @@ class HomeActivity : AppCompatActivity() {
 
         binding.tvRecieved.text = "WELCOME , ${user?.name ?: "Guest"}"
 
+
+
+
+
         binding.btnLogout.setOnClickListener {
             SharedPrefs(this).clearUser()
             startActivity(Intent(this, MainActivity::class.java))
