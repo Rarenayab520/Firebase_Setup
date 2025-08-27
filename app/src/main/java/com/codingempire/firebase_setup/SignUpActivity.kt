@@ -31,7 +31,6 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             val user = db.collection("Users")
-
             user.whereEqualTo("email", email).limit(1).get()
                 .addOnSuccessListener { q ->
                     if (!q.isEmpty) {
@@ -42,18 +41,18 @@ class SignUpActivity : AppCompatActivity() {
                             name = name,
                             email = email,
                             password = password,
-                            createdAt = System.currentTimeMillis()
+                            createdAt = System.currentTimeMillis(),
+                            isLoggedIn = true
                         )
                         user.add(temp).addOnSuccessListener { doc ->
                             val finalUser = temp.copy(id = doc.id)
-                            doc.update(mapOf("id" to doc.id)).addOnSuccessListener {
-                                SharedPrefs(this).saveUser(finalUser)
-
-                                val i = Intent(this, MainActivity::class.java)
-                                i.putExtra("user", finalUser)
-                                startActivity(i)
-                                finish()
-                            }.addOnFailureListener { e ->
+                            doc.update(mapOf("id" to doc.id, "isLoggedIn" to true))
+                                .addOnSuccessListener {
+                                    val i = Intent(this, MainActivity::class.java)
+                                    i.putExtra("user", finalUser)
+                                    startActivity(i)
+                                    finish()
+                                }.addOnFailureListener { e ->
                                 Toast.makeText(
                                     this, "Signup Failed: ${e.message}", Toast.LENGTH_SHORT
                                 ).show()
@@ -64,7 +63,6 @@ class SignUpActivity : AppCompatActivity() {
                             Toast.makeText(this, "Error : ${e.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
-
 
                 }
 

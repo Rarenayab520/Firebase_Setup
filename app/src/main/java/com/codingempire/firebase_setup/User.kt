@@ -7,5 +7,6 @@ data class User(
     val name: String = "",
     val email: String = "",
     val password: String = "",
-    val createdAt: Long = 0L
+    val createdAt: Long = 0L ,
+    val isLoggedIn: Boolean = false
 ): Serializable
