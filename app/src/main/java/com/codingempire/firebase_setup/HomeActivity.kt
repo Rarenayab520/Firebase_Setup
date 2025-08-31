@@ -64,5 +64,8 @@ class HomeActivity : AppCompatActivity() {
             }
 
         }
+        binding.btnNavigate.setOnClickListener {
+            startActivity(Intent(this , DataActivity::class.java))
+        }
     }
 }
